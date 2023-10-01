@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  border: 1px solid gray;
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 0 5px 0 10px;
+  box-sizing: border-box;
+  min-width: 260px;
+  justify-content: space-between;
+}
+.icon {
+  width: 36px;
+  height: 36px;
+  padding: 2px;
+}
+
+.input {
+  background-color: white;
+  border: none;
+  outline: none;
+}

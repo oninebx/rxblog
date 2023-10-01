@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  align-items: center;
+  background-color: bisque;
+  height: 15vh;
+}
+
+.avatar {
+  width: 10vh;
+  height: 10vh;
+  border-radius: 50%;
+  border: 2px solid white;
+  margin: 1rem;
+}
+
+.title {
+  font-size: large;
+}
