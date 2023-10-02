@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { useConfig } from "../providers/Config";
 import { Blog } from "../types";
 import { withApiBase } from "../common/api-enhancer";
 import { useFetch } from "./useFetch";

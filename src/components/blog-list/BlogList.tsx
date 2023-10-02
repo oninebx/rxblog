@@ -1,16 +1,18 @@
 import React from 'react';
 import BlogBrief from './BlogBrief';
-import { Blog } from '../../types';
+import { Blog, Touchable } from '../../types';
+import styles from './BlogList.module.scss';
 
 type Props = {
   data?: Blog[];
-}
+} & Touchable
 
-const BlogList = ({ data }: Props) => {
+const BlogList = ({ data, touch, ...rest }: Props) => {
   return (
-    <div>
+    <div className={styles.container} {...rest}>
       { 
-        data?.map(b => <BlogBrief key={b.id} number={b.number} title={b.title}/>)
+        data?.map(b => <BlogBrief key={b.id} number={b.number} 
+          title={`${touch ? '' : `${new Date(b.created_at).toLocaleDateString()} > `}${b.title}`}/>)
       }
     </div>
   )

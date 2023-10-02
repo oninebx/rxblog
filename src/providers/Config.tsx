@@ -5,6 +5,7 @@ interface Config {
   title: string;
   name: string;
   repo: string;
+  accessToken: string;
 }
 
 const useController = () => {
@@ -37,7 +38,7 @@ const ConfigProvider = ({children}: PropsWithChildren) => (
   </ConfigContext.Provider>
 );
 
-const useConfig = () => JSON.parse(localStorage.getItem('config') ?? '{}');
+const useConfig = () => JSON.parse(localStorage.getItem('config') ?? '{}') as Config;
 
 export {
   ConfigProvider,

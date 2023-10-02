@@ -1,7 +1,7 @@
 import { Config } from "@testing-library/react";
 import { PropsWithChildren, createContext, useContext, useEffect, useState } from "react";
 
-interface ExternalData {
+interface Environment {
   mottoes: string[]
 }
 
@@ -17,36 +17,34 @@ const fetchData = <T, >(path: string, callback: Function) => async() => {
 
 const useController = () => {
   
-  const [externalData, setExternalData] = useState({} as ExternalData);
+  const [environment, setEnvironment] = useState({} as Environment);
   useEffect(() => {
     const fetchConfig = fetchData<Config>('./config.json', (data: string) => {
       localStorage.setItem("config", JSON.stringify(data));
     });
     fetchConfig();
-    
-
     const fetchMottoes = fetchData<string[]>('./mottoes.json', (data: string[]) => {
-      setExternalData({mottoes: data});
+      setEnvironment({mottoes: data});
     });
-      
     fetchMottoes();
+    
   }, []);
-  return externalData;
+  return environment;
 };
 
-const ExternalDataContext = createContext<ReturnType<typeof useController>>({
+const EnvironmentContext = createContext<ReturnType<typeof useController>>({
   
-} as ExternalData);
+} as Environment);
 
-const ExternalDataProvider = ({children}: PropsWithChildren) => (
-  <ExternalDataContext.Provider value={useController()}>
+const EnvironmentProvider = ({children}: PropsWithChildren) => (
+  <EnvironmentContext.Provider value={useController()}>
     {children}
-  </ExternalDataContext.Provider>
+  </EnvironmentContext.Provider>
 );
 
-const useExternalData = () => useContext(ExternalDataContext);
+const useEnvironment= () => useContext(EnvironmentContext);
 
 export {
-  ExternalDataProvider,
-  useExternalData
+  EnvironmentProvider,
+  useEnvironment
 }

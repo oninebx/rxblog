@@ -4,16 +4,16 @@ import './index.css';
 import './markdown.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { ExternalDataProvider } from './providers/ExternalData';
+import { EnvironmentProvider } from './providers/Environment';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   // <React.StrictMode>
-    <ExternalDataProvider>
+    <EnvironmentProvider>
       <App />
-    </ExternalDataProvider>
+    </EnvironmentProvider>
     
   // </React.StrictMode>
 );
