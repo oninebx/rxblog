@@ -1,8 +1,15 @@
-import { Config } from "@testing-library/react";
 import { PropsWithChildren, createContext, useContext, useEffect, useState } from "react";
 
 interface Environment {
-  mottoes: string[]
+  mottoes: string[];
+}
+
+interface Config {
+  avatarUrl: string;
+  title: string;
+  name: string;
+  repo: string;
+  accessToken: string;
 }
 
 const fetchData = <T, >(path: string, callback: Function) => async() => {
@@ -43,8 +50,10 @@ const EnvironmentProvider = ({children}: PropsWithChildren) => (
 );
 
 const useEnvironment= () => useContext(EnvironmentContext);
+const useConfig = () => JSON.parse(localStorage.getItem('config') ?? '{}') as Config;
 
 export {
   EnvironmentProvider,
-  useEnvironment
+  useEnvironment,
+  useConfig
 }

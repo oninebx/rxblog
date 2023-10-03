@@ -12,7 +12,7 @@ const MottoFrame = ({
 }: Props) => {
   const [ordinal, setOrdinal] = useState(0);
   useInterval(() => {
-    setOrdinal(Math.round(Math.random() * (data.length - 1)));
+    data && setOrdinal(Math.round(Math.random() * (data.length - 1)));
   }, 5000);
  
   

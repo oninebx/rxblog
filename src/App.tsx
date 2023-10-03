@@ -4,7 +4,7 @@ import Home from './pages/home/Home';
 import { BrowserRouter, Params, Routes } from 'react-router-dom';
 import BlogPost from './pages/blog-post/BlogPost';
 import Breadcrumbs from './components/breadcrumbs/Breadcrumbs';
-import { BreadcrumbsRoute, Route } from 'use-react-router-breadcrumbs';
+import { Route } from 'use-react-router-breadcrumbs';
 
 const REGEX_MOBILE = /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i;
 
@@ -17,10 +17,9 @@ function App() {
 
   return (
     <BrowserRouter>
-    <Breadcrumbs />
       <Routes>
         <Route path='/rxblog' element={<Home touch={touch}/>} />
-        <Route path='/rxblog/blog/:postId' element={<BlogPost touch={touch}/>} />
+        <Route path='/rxblog/blogs/:postId' element={<BlogPost touch={touch}/>} />
       </Routes>
     </BrowserRouter>
   );

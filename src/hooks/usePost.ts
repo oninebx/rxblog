@@ -1,5 +1,6 @@
 import { withApiBase } from "../common/api-enhancer";
-import { useConfig } from "../providers/Config";
+import { useBlogBase } from "../providers/BlogBase";
+import { useConfig } from "../providers/Environment";
 import { Post } from "../types";
 import { useFetch } from "./useFetch";
 

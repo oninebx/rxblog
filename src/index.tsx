@@ -5,6 +5,7 @@ import './markdown.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { EnvironmentProvider } from './providers/Environment';
+import { BlogBaseProvider } from './providers/BlogBase';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -12,7 +13,10 @@ const root = ReactDOM.createRoot(
 root.render(
   // <React.StrictMode>
     <EnvironmentProvider>
-      <App />
+      <BlogBaseProvider>
+        <App />
+      </BlogBaseProvider>
+      
     </EnvironmentProvider>
     
   // </React.StrictMode>

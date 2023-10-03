@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import styles from './BlogBrief.module.scss';
 
 const BlogBrief = ({ number, title }: BlogBriefProps) =>  (
-    <Link className={styles.link} to={`/rxblog/blog/${number}`}>
+    <Link className={styles.link} to={`/rxblog/blogs/${number}`}>
         {title}
     </Link> 
     

@@ -3,14 +3,27 @@
   flex-direction: column;
   align-items: center;
 }
-.title {
-  height: 100px;
-  line-height: 100px;
+
+.topBar {
   width: 100%;
   background-color: bisque;
+  padding: 10px;
+}
+
+.title {
+  height: 60px;
+  line-height: 60px;
   text-align: center;
 }
 
 .article {
-  width: 60%;
+  width: 90%;
+  max-width: 100vmin;
+  background-color: transparent;
+  padding: 1rem;
+}
+
+.inner {
+  margin: 0 auto;
+  max-width: 100vmin;
 }

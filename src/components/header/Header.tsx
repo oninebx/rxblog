@@ -12,11 +12,14 @@ const Header = ({ title, avatarUrl, mottoes }: HeaderProps) => {
   const MottoDisplay = withStyles({flexGrow: 1})(MottoFrame);
   const SearchBar = withStyles({marginRight: '20px'})(SearchBox);
   return (
-    <div className={styles.container}>
-      <CircleImage diameter='10vh' url={avatarUrl} injectClass={styles.avatar} />
-      <span className={styles.title}>{title}</span>
-      <MottoDisplay data={mottoes} />
-      <SearchBar />
+    <div className={styles.outer}>
+      <div className={styles.inner}>
+        <CircleImage diameter='10vh' url={avatarUrl} injectClass={styles.avatar} />
+        <span className={styles.title}>{title}</span>
+        <MottoDisplay data={mottoes} />
+        <SearchBar />
+      </div>
+      
     </div>
   )
 }
