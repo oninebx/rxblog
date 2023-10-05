@@ -10,6 +10,7 @@ interface Config {
   name: string;
   repo: string;
   accessToken: string;
+  categories: string[];
 }
 
 const fetchData = <T, >(path: string, callback: Function) => async() => {
@@ -27,6 +28,7 @@ const useController = () => {
   const [environment, setEnvironment] = useState({} as Environment);
   useEffect(() => {
     const fetchConfig = fetchData<Config>('./config.json', (data: string) => {
+      console.log(data)
       localStorage.setItem("config", JSON.stringify(data));
     });
     fetchConfig();

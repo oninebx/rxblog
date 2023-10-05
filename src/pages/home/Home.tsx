@@ -9,9 +9,10 @@ import Heading from '../../components/heading/Heading';
 import styles from './Home.module.scss';
 import cn from 'classnames';
 import { useBlogBase } from '../../providers/BlogBase';
+import CategoryList from '../../components/category-list/CategoryList';
 
 const Home = ({ touch } : Touchable) => {
-  const {title, avatarUrl, name, repo} = useConfig();
+  const {title, avatarUrl, name, repo, categories} = useConfig();
   const { mottoes } = useEnvironment();
   const blogs = useBlogs(name, repo);
   const {indexBase} = useBlogBase();
@@ -22,9 +23,8 @@ const Home = ({ touch } : Touchable) => {
     <div className={styles.container}>
       <Header touch={touch} title={title} avatarUrl={avatarUrl} mottoes={mottoes}/>
       <div className={cn(styles.articleContainer, {[styles.desktop]: !touch})}>
-        <Heading text='Recent Articles' />
-        <br/>
-        <BlogList touch={touch} data={blogs}/>
+        <BlogList labelText={'Recent Articles'} touch={touch} data={blogs}/>
+        <CategoryList data={categories}/>
       </div>
       
     </div>

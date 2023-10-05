@@ -6,12 +6,17 @@
 }
 .articleContainer {
   display: flex;
-  flex-direction: column;
-  width: 600px;
+  // width: 600px;
   max-width: 80%;
+  justify-content: space-between;
+  box-sizing: border-box;
   
   &.desktop {
-    margin: 50px 50px 50px 15%;
-    align-self: flex-start;
+    width: 72%;
+    margin-top: 50px;
+    padding: 0 20px;
+    // padding: 0 50px;
+    // margin: 50px 0 50px 15%;
+    // align-self: flex-start;
   }
 }
