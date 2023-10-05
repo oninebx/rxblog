@@ -5,5 +5,11 @@
   "repo": "rxblog",
   "client_secret": "8393f0aaf1817d499143256ae0cbc7457e53458a",
   "client_id": "a44bdf5074d36e0a5fc2",
-  "accessToken": "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"
+  "accessToken": "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",
+  "categories":[
+    "Algorithm", "C#", "TypeScript", "Best-Practices"
+  ],
+  "Archive": [
+    2023
+  ]
 }
