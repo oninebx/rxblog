@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/rxblog/static/css/main.4dae0101.css",
-    "main.js": "/rxblog/static/js/main.3eedcb99.js",
+    "main.js": "/rxblog/static/js/main.2ee8bfbe.js",
     "static/js/787.1e07fa2c.chunk.js": "/rxblog/static/js/787.1e07fa2c.chunk.js",
     "static/media/search.svg": "/rxblog/static/media/search.206f696bca0dfe25be821f4e0de49612.svg",
     "index.html": "/rxblog/index.html",
     "main.4dae0101.css.map": "/rxblog/static/css/main.4dae0101.css.map",
-    "main.3eedcb99.js.map": "/rxblog/static/js/main.3eedcb99.js.map",
+    "main.2ee8bfbe.js.map": "/rxblog/static/js/main.2ee8bfbe.js.map",
     "787.1e07fa2c.chunk.js.map": "/rxblog/static/js/787.1e07fa2c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4dae0101.css",
-    "static/js/main.3eedcb99.js"
+    "static/js/main.2ee8bfbe.js"
   ]
 }
