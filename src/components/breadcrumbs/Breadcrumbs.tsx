@@ -7,7 +7,7 @@ import { indexBase, useBlogBase } from '../../providers/BlogBase';
 type Props = {}
 
 const routes = [
-  { path: "/rxblog/blogs/:postId", breadcrumb: ({match}) => indexBase[`${match.params.postId}`]},
+  { path: "/rxblog/:category/:postId", breadcrumb: ({match}) => indexBase[`${match.params.postId}`]},
   { path: "/rxblog", breadcrumb: "Home" }
 ] as BreadcrumbsRoute[];
 

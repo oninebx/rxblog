@@ -3,9 +3,23 @@
   flex-direction: column;
   border: 1px solid lightgray;
   padding: 15px 20px;
+  min-width: 240px;
 
   & > label {
     padding-bottom: 10px;
     border-bottom: 1px solid lightgrey;
+  }
+}
+.item {
+  padding: 10px;
+  list-style-type: square;
+  color:saddlebrown;
+}
+.link {
+  text-decoration: none;
+  color:steelblue;
+  
+  &:visited {
+    color:steelblue;
   }
 }

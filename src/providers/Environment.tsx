@@ -11,6 +11,7 @@ interface Config {
   repo: string;
   accessToken: string;
   categories: string[];
+  archives: string[];
 }
 
 const fetchData = <T, >(path: string, callback: Function) => async() => {

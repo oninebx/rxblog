@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.topBar {
+  width: 100%;
+  background-color: bisque;
+  padding: 10px;
+}
+
+.title {
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+}
+
+.inner {
+  margin: 0 auto;
+  max-width: 100vmin;
+}

@@ -1,25 +1,20 @@
 import React from 'react';
-import BlogBrief from './BlogBrief';
-import { Blog, Touchable } from '../../types';
-import styles from './BlogList.module.scss';
-import Heading from '../heading/Heading';
+import BlogItem from './BlogItem';
+import { Blog, BlogItemProps, Touchable } from '../../types';
+import ListSection from '../list-section/ListSection';
 
 type Props = {
   labelText?: string;
-  data?: Blog[];
+  data?: BlogItemProps[];
 } & Touchable
 
 const BlogList = ({ labelText, data, touch, ...rest }: Props) => {
   return (
-      <div className={styles.container} {...rest}>
-        {labelText && <Heading text={labelText} />}
-        <br/>
-        { 
-          data?.map(b => <BlogBrief key={b.id} number={b.number} 
-            title={`${touch ? '' : `${new Date(b.created_at).toLocaleDateString()} > `}${b.title}`}/>)
-        }
-      </div>
-    
+    <ListSection title={labelText??''} {...rest}>
+      {
+        data?.map((b, index) => <BlogItem key={`${labelText}-${index}`} {...b}/>)
+      }
+    </ListSection>
   )
 }
 

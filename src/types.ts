@@ -1,6 +1,11 @@
-export interface BlogBriefProps {
+export interface BlogItemProps {
   title: string;
   number: number;
+  category: string;
+}
+
+export interface Label {
+  name: string;
 }
 
 export interface Blog {
@@ -8,6 +13,7 @@ export interface Blog {
   title: string;
   number: number;
   created_at: string;
+  labels: Label[];
 }
 
 export interface Post {
@@ -17,4 +23,8 @@ export interface Post {
 
 export interface Touchable {
   touch: boolean;
+}
+
+export interface TitlePage {
+  title: string;
 }
