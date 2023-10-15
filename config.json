@@ -7,9 +7,9 @@
   "client_id": "a44bdf5074d36e0a5fc2",
   "accessToken": "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",
   "categories":[
-    "Algorithm", "C#", "TypeScript"
+    "Algorithm", "C#", "TypeScript", "Best-Practices"
   ],
-  "Archive": [
+  "archives": [
     2023
   ]
 }
