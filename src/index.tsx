@@ -6,6 +6,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { EnvironmentProvider } from './providers/Environment';
 import { BlogBaseProvider } from './providers/BlogBase';
+import { AuthProvider } from './providers/Auth';
+import { RouterProvider, createHashRouter } from 'react-router-dom';
+
+const router = createHashRouter([
+  {
+    path: '/*',
+    element: <App />
+  }
+]);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -13,10 +22,11 @@ const root = ReactDOM.createRoot(
 root.render(
   // <React.StrictMode>
     <EnvironmentProvider>
-      <BlogBaseProvider>
-        <App />
-      </BlogBaseProvider>
-      
+      <AuthProvider>
+        <BlogBaseProvider>
+          <RouterProvider router={router} />
+        </BlogBaseProvider>
+      </AuthProvider>
     </EnvironmentProvider>
     
   // </React.StrictMode>

@@ -17,8 +17,11 @@ const PageLayout = ({title, children}: PropsWithChildren<Props>) => {
           <Breadcrumbs />
         </div>
       </div>
-      {children}
+      <div className={styles.contentContainer}>
+        {children}
+      </div>
       
+      <div className={styles.footer}>Copyright © 2023 Ryan Xu - Powered by rxblog</div>
     </div>
   )
 }

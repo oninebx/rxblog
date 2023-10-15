@@ -7,14 +7,14 @@ import { indexBase, useBlogBase } from '../../providers/BlogBase';
 type Props = {}
 
 const routes = [
-  { path: "/rxblog/:category/:postId", breadcrumb: ({match}) => indexBase[`${match.params.postId}`]},
-  { path: "/rxblog", breadcrumb: "Home" }
+  { path: "/:category/:postId", breadcrumb: ({match}) => indexBase[`${match.params.postId}`]},
+  { path: "/", breadcrumb: "Home" }
 ] as BreadcrumbsRoute[];
 
 const Breadcrumbs = (props: Props) => {
 
   const breadcrumbs = useBreadcrumbs(routes, {
-    excludePaths: ["/"],
+    // excludePaths: ["/"],
   });
   return (
     <div className={styles.container}>
@@ -22,7 +22,7 @@ const Breadcrumbs = (props: Props) => {
         const isLast = index === breadcrumbs.length - 1;
         return isLast ? breadcrumb : (
           <NavLink className={styles.link} to={match.pathname}>
-            {breadcrumb} &gt; &#20;
+            {breadcrumb} &gt; &nbsp;
           </NavLink>
         );
 })}

@@ -4,8 +4,7 @@ import styles from './Post.module.scss';
 import usePost from '../../hooks/usePost';
 import cn from 'classnames';
 import { TitlePage, Touchable } from '../../types';
-import Breadcrumbs from '../../components/breadcrumbs/Breadcrumbs';
-import withPageLayout from '../../components/page-heading/PageLayout.desktop';
+import withPageLayout from '../../components/page-layout/PageLayout.desktop';
 
 type Props = {
   htmlBody?: string;

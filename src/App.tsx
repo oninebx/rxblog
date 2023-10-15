@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import Home from './pages/home/Home';
-import { BrowserRouter, Params, Routes } from 'react-router-dom';
+import { HashRouter, Routes, BrowserRouter } from 'react-router-dom';
 import Post from './pages/post/Post';
 import Breadcrumbs from './components/breadcrumbs/Breadcrumbs';
 import { Route } from 'use-react-router-breadcrumbs';
@@ -18,19 +18,18 @@ function App() {
   const touch = Boolean(navigator.userAgent.match(REGEX_MOBILE));
   const {categories} = useConfig();
   return (
-    <BrowserRouter>
+    // <BrowserRouter basename='/rxblog'>
       <Routes>
-        <Route path='/rxblog' element={<Home touch={touch}/>} />
-        <Route path='/rxblog/:category/:postId' element={<Post touch={touch}/>} />
-        {/* <Route path='/rxblog/blogs' element={<BlogCategories touch={touch} />} /> */}
+        <Route path='/' element={<Home touch={touch}/>} />
+        <Route path='/:category/:postId' element={<Post touch={touch}/>} />
         {
-          categories.map((catetory, index) => 
+          categories && categories.map((catetory, index) => 
           <Route 
-            key={`cateotry-route-${index}`} path={`/rxblog/${catetory}`} 
+            key={`cateotry-route-${index}`} path={`/${catetory}`} 
             element={<Category touch={touch} />}/>)
         }
       </Routes>
-    </BrowserRouter>
+    // </BrowserRouter>
   );
 }
 

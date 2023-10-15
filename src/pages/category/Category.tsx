@@ -1,5 +1,5 @@
 import React from 'react'
-import withPageLayout from '../../components/page-heading/PageLayout.desktop'
+import withPageLayout from '../../components/page-layout/PageLayout.desktop'
 import { BlogItemProps, TitlePage, Touchable } from '../../types'
 import { useLocation, useParams } from 'react-router-dom'
 import { useConfig } from '../../providers/Environment'
